@@ -21,8 +21,8 @@ import java.awt.event.KeyEvent;
 import java.applet.AudioClip;   
 import java.awt.Point;
 import java.util.ArrayList;
-import rooms.RoomOne;
-import rooms.RoomZero;
+import rooms.*;
+
 
 
 public class ArcadeDemo extends AnimationPanel 
@@ -49,6 +49,7 @@ public class ArcadeDemo extends AnimationPanel
         rooms = new ArrayList<>();
         rooms.add(new RoomZero());
         rooms.add(new RoomOne());
+        rooms.add(new RoomTwo());
         currentRoom = 0;
         waitMode = false;
         waitBeforeNextRoomTimer = 0;
@@ -114,7 +115,7 @@ public class ArcadeDemo extends AnimationPanel
     public void keyTyped(KeyEvent e) 
     {
         char c = e.getKeyChar();
-
+        rooms.get(currentRoom).onKey(c, player);
     }
     
     public void keyPressed(KeyEvent e)

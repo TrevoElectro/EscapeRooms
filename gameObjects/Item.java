@@ -44,4 +44,7 @@ public class Item
     {
         g.fillRect(rect.x, rect.y, rect.width, rect.height);
     }
+    public void reactToKey(char c, Player player) {
+       System.out.println("A key was pressed, but the Item has not overriden the reactToKey method");
+    }
 }
